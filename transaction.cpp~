@@ -1,0 +1,38 @@
+#include <iostream>
+#include "transaction.h"
+#include <string>
+
+Transaction::Transaction()
+{
+	m_day = 1;
+	m_amount = 1000.0;
+	m_description = "default";
+}
+
+Transaction::Transaction(unsigned int day, double amount, std::string description)
+{
+	m_day = day;
+	m_amount = amount;
+	m_description = description;
+}
+
+void Transaction::read(unsigned int day, double amount, std::string description)
+{
+	m_day = day;
+	m_amount = amount;
+	m_description = description;
+}
+
+void Transaction::print() const
+{
+	std::cout << m_day << "\t\t" << m_amount << "\t\t" << m_description << std::endl;
+}
+
+unsigned int Transaction::print_day() const
+{
+	return m_day;
+}
+double Transaction::print_amount() const
+{
+	return m_amount;
+}
